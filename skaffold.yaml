@@ -10,7 +10,9 @@ build:
       template: '{{.DOCKER_REGISTRY}}/{{.IMAGE_NAME}}:{{.VERSION}}'
   local: {}
 deploy:
-  kubectl: {}
+  kubectl:
+    manifests:
+      - ./hello-app-deployment.yaml
 profiles:
 - name: dev
   build:
